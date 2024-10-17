@@ -1,0 +1,46 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Features\Clubs\Queries\GetAllPlayers\**" />
+    <Compile Remove="Features\Clubs\Queries\GetPlayerById\**" />
+    <Compile Remove="Features\Clubs\Queries\GetPlayersByClub\**" />
+    <EmbeddedResource Remove="Features\Clubs\Queries\GetAllPlayers\**" />
+    <EmbeddedResource Remove="Features\Clubs\Queries\GetPlayerById\**" />
+    <EmbeddedResource Remove="Features\Clubs\Queries\GetPlayersByClub\**" />
+    <None Remove="Features\Clubs\Queries\GetAllPlayers\**" />
+    <None Remove="Features\Clubs\Queries\GetPlayerById\**" />
+    <None Remove="Features\Clubs\Queries\GetPlayersByClub\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="12.0.1" />
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.1" />
+    <PackageReference Include="FluentValidation" Version="11.10.0" />
+    <PackageReference Include="FluentValidation.AspNetCore" Version="11.3.0" />
+    <PackageReference Include="MediatR" Version="12.4.1" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.10" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Features\Clubs\Commands\" />
+    <Folder Include="Features\Clubs\Queries\" />
+    <Folder Include="Features\Players\Commands\" />
+    <Folder Include="Features\Players\Queries\GetAllPlayers\" />
+    <Folder Include="Features\Players\Queries\GetPlayerById\" />
+    <Folder Include="Features\Players\Queries\GetPlayersByClub\" />
+    <Folder Include="Features\Stadiums\Commands\" />
+    <Folder Include="Features\Stadiums\Queries\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\CleanArchitectureDemo.Domain\CleanArchitectureDemo.Domain.csproj" />
+    <ProjectReference Include="..\CleanArchitectureDemo.Shared\CleanArchitectureDemo.Shared.csproj" />
+  </ItemGroup>
+
+</Project>
